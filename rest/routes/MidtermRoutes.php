@@ -6,6 +6,8 @@ Flight::route('GET /connection-check', function(){
     * Goal is to check whether connection is successfully established or not
     * This endpoint does not have to return output in JSON format
     */
+
+    Flight::midtermService();
 });
 
 Flight::route('GET /cap-table', function(){
@@ -17,6 +19,7 @@ Flight::route('GET /cap-table', function(){
     * Outpus is given in figure 2
     * This endpoint should return output in JSON format
     */
+    Flight::json(Flight::midtermService()->cap_table());
 });
 
 Flight::route('GET /summary', function(){
@@ -25,6 +28,9 @@ Flight::route('GET /summary', function(){
     * Output is given in figure 3
     * This endpoint should return output in JSON format
     */
+
+    Flight::json(Flight::midtermService()->summary());
+
 });
 
 Flight::route('GET /investors', function(){
@@ -33,6 +39,7 @@ Flight::route('GET /investors', function(){
     * Output is given in figure 4
     * This endpoint should return output in JSON format
     */
+    Flight::json(Flight::midtermService()->investors());
 });
 
 ?>
